@@ -1,0 +1,139 @@
+[
+    {
+        "name": "jeanku/database",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/database.git",
+            "reference": "48888cbacbcfe1061e8b8e3ff3bd00d8fd54d51d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/database/zipball/48888cbacbcfe1061e8b8e3ff3bd00d8fd54d51d",
+            "reference": "48888cbacbcfe1061e8b8e3ff3bd00d8fd54d51d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-02-01T11:18:53+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\Database\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "light Illuminate Database package.",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "database",
+            "laravel",
+            "orm",
+            "sql"
+        ]
+    },
+    {
+        "name": "jeanku/rabbitmq",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/rabbitmq.git",
+            "reference": "b5a23d4c8b2858f0786978d936024ffde48bbb99"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/rabbitmq/zipball/b5a23d4c8b2858f0786978d936024ffde48bbb99",
+            "reference": "b5a23d4c8b2858f0786978d936024ffde48bbb99",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-04-12T12:13:04+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\Rabbitmq\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "rabbitmq",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "rabbitmq"
+        ]
+    },
+    {
+        "name": "nezamy/route",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nezamy/route.git",
+            "reference": "d2612f463868f1e25620eb99ffd18309775a29b5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nezamy/route/zipball/d2612f463868f1e25620eb99ffd18309775a29b5",
+            "reference": "d2612f463868f1e25620eb99ffd18309775a29b5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2017-08-05T01:13:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "System\\": "system"
+            },
+            "files": [
+                "system/function.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mahmoud Elnezamy",
+                "email": "mahmoud@nezamy.com",
+                "homepage": "http://nezamy.com",
+                "role": "Full Stack Web Developer"
+            }
+        ],
+        "description": "Route - Fast, flexible routing for PHP, enabling you to quickly and easily build RESTful web applications.",
+        "homepage": "https://nezamy.com/route",
+        "keywords": [
+            "api",
+            "justframework",
+            "restful",
+            "route"
+        ]
+    }
+]

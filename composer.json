@@ -1,0 +1,15 @@
+{
+  "require": {
+    "jeanku/database": "dev-master",
+    "jeanku/rabbitmq": "dev-master",
+    "nezamy/route": "^1.1"
+  },
+  "autoload": {
+    "classmap": [
+      "app"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
