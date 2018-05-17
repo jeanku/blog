@@ -2,7 +2,9 @@
   "require": {
     "jeanku/database": "dev-master",
     "jeanku/rabbitmq": "dev-master",
-    "nezamy/route": "^1.1"
+    "nezamy/route": "^1.1",
+    "symfony/http-foundation": "^3.4",
+    "symfony/routing": "^3.4"
   },
   "autoload": {
     "classmap": [

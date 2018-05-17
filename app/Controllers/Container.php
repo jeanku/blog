@@ -602,7 +602,7 @@ class Container implements ArrayAccess
     public function make($abstract, array $parameters = [])
     {
         $abstract = $this->getAlias($this->normalize($abstract));
-
+        
         // If an instance of the type is currently being managed as a singleton we'll
         // just return an existing instance instead of instantiating new instances
         // so the developer can keep using the same objects instance every time.
@@ -611,7 +611,7 @@ class Container implements ArrayAccess
         }
 
         $concrete = $this->getConcrete($abstract);
-
+        
         // We're ready to instantiate an instance of the concrete type registered for
         // the binding. This will instantiate the types, as well as resolve any of
         // its "nested" dependencies recursively until all have gotten resolved.

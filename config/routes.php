@@ -1,18 +1,17 @@
 <?php
 
-use NoahBuscher\Macaw\Macaw;
-
-Macaw::get('fuck', function() {
-  echo "成功！222";
+$route->any('/aaa', function() {
+    echo 'Hello World';
 });
 
-Macaw::get('(:all)', function($fu) {
-  echo '未匹配到路由<br>'.$fu;
+$route->any('/bbb', function() {
+    return [123,444];
 });
 
-$data = Macaw::get('/home', '\App\Controllers\HomeController@home');
 
-$data = Macaw::dispatch();
-echo "<pre>";
-print_r($data);
-exit;
+$route->any('/ccc', function() {
+    echo 'Hello ccc';
+});
+
+
+$route->any('/home', 'App\Controllers\HomeController@home');

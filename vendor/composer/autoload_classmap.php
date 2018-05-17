@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controllers\\BaseController' => $baseDir . '/app/Controllers/BaseController.php',
+    'App\\Controllers\\Container' => $baseDir . '/app/Controllers/Container.php',
     'App\\Controllers\\HomeController' => $baseDir . '/app/Controllers/HomeController.php',
     'App\\Controllers\\MenuController' => $baseDir . '/app/Controllers/MenuController.php',
     'App\\Exceptions\\ServiceException' => $baseDir . '/app/Exceptions/ServiceException.php',
@@ -33,4 +34,11 @@ return array(
     'App\\Util\\SpeedLimiter' => $baseDir . '/app/Util/SpeedLimiter.php',
     'App\\Util\\Validate' => $baseDir . '/app/Util/Validate.php',
     'App\\Util\\ValidateResult' => $baseDir . '/app/Util/Validate.php',
+    'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
+    'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+    'DivisionByZeroError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
+    'Error' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/Error.php',
+    'ParseError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
+    'SessionUpdateTimestampHandlerInterface' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+    'TypeError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
 );
