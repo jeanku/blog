@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 
-use App\Util\Log;
 use App\Modules\Menu;
 
 /**
@@ -19,7 +18,7 @@ class MenuController extends BaseController
      * @param array $param require parameters
      * @return array
      */
-    public function lists($param, $page = 1, $pagesize = 10, $order = 'id', $desc = 'desc')
+    public function lists($param = [], $page = 1, $pagesize = 10, $order = 'id', $desc = 'desc')
     {
         try {
             return $this->success(Menu::lists($param, $page, $pagesize, $order, $desc));

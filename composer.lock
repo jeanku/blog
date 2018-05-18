@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd504d374bd87cf0fd3e8fde258aa698",
+    "content-hash": "4b0919d32960825cc01f6f7fe22d7ee6",
     "packages": [
         {
             "name": "jeanku/database",
@@ -88,6 +88,48 @@
                 "rabbitmq"
             ],
             "time": "2018-04-12T12:13:04+00:00"
+        },
+        {
+            "name": "jeanku/util",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeanku/util.git",
+                "reference": "edbb1451617940041367a6e6a5022d67681946a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeanku/util/zipball/edbb1451617940041367a6e6a5022d67681946a0",
+                "reference": "edbb1451617940041367a6e6a5022d67681946a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jeanku\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JeanKu",
+                    "email": "490573621@qq.com"
+                }
+            ],
+            "description": "util",
+            "keywords": [
+                "config",
+                "log",
+                "request",
+                "util"
+            ],
+            "time": "2018-05-18 10:04:12"
         },
         {
             "name": "nezamy/route",
@@ -441,7 +483,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jeanku/database": 20,
-        "jeanku/rabbitmq": 20
+        "jeanku/rabbitmq": 20,
+        "jeanku/util": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

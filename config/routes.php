@@ -15,3 +15,4 @@ $route->any('/ccc', function() {
 
 
 $route->any('/home', 'App\Controllers\HomeController@home');
+$route->any('/menu/lists', 'App\Controllers\MenuController@lists');

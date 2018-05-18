@@ -40,7 +40,7 @@ class Route
     /**
      * Constructor - Define some variables.
      */
-    public function __construct($app)
+    public function __construct()
     {
         $this->routes         = $this->urls = [];
         $this->group          = $this->matchedPath = '';
@@ -50,7 +50,6 @@ class Route
         $this->isGroup        = false;
         $this->req            = \System\Request::instance();
         $this->bindedGroups   = $this->currentGroup = [];
-        $this->app            = $app;
         defined('URL') || define('URL', $this->req->url, TRUE);
 
     }
@@ -60,10 +59,10 @@ class Route
      *
      * @return $this
      */
-    public static function instance($app)
+    public static function instance()
     {
         if (null === static::$instance) {
-            static::$instance = new static($app);
+            static::$instance = new static();
         }
         return static::$instance;
     }
@@ -392,8 +391,11 @@ class Route
     public function end()
     {
         if ($this->matched) {
-            return $this->app->make('response')->setData($this->callback($this->routeCallback, $this->req->args));
+            return $this->callback($this->routeCallback, $this->req->args);
         } else {
+            echo "<pre>";
+            print_r($this->req->url);
+            exit;
            return [];
         }
     }

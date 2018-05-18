@@ -443,5 +443,49 @@
             "uri",
             "url"
         ]
+    },
+    {
+        "name": "jeanku/util",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/util.git",
+            "reference": "edbb1451617940041367a6e6a5022d67681946a0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/util/zipball/edbb1451617940041367a6e6a5022d67681946a0",
+            "reference": "edbb1451617940041367a6e6a5022d67681946a0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-05-18T10:04:12+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "util",
+        "keywords": [
+            "config",
+            "log",
+            "request",
+            "util"
+        ]
     }
 ]

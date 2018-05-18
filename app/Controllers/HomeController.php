@@ -1,32 +1,24 @@
 <?php
 namespace App\Controllers;
 
-use App\Util\Log;
 use App\Modules\Menu;
-
+use App\Util\Response;
+//use App\Util\Request;
+use Jeanku\Facades\Config;
 
 
 class HomeController extends BaseController
 {
 
 
-    public function home($param = null)
+    public function home()
     {
-//        $redis= new \Redis();
-//        $redis->pconnect('127.0.0.1', 6379);
-//        $redis->select(1);
-//        echo 'success';
-//        echo "<pre>";
-//        print_r($redis->get('key33'));
-////        print_r($redis->set('key32', 23));
-////        print_r($redis->set('key33', 33));
-//        exit;
-//        sleep(10);
-
-//        $res = Rabbitmq::push('e_linvo', 'key_1', function(){
-//            return json_encode(['123123'=>'412322']);
-//        });
-//        $res = Product::push('email test', 'services', 'logs');
-        return [123444];
+//        $param = Request::all();
+//        Log::info('fffff');
+        $data = Config::get('database');
+        echo "<pre>";
+        print_r($data);
+        exit;
+        return true;
     }
 }

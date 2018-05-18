@@ -32,7 +32,7 @@ function br($line) {
 //===================================================
 
 //=======[  instance class App ]=====================
-function app($c = null) {
+function getApp($c = null) {
     $app = system\App::instance();
     if ($c) {
         return $app->$c;
@@ -45,5 +45,5 @@ function url($path = null) {
 }
 //=======[ get route url by name  ]=================
 function route($name, array $args = []) {
-    return url(app('route')->getRoute($name, $args));
+    return url(getApp('route')->getRoute($name, $args));
 }

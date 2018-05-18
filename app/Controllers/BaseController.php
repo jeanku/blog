@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 
-use App\Util\Response;
 use App\Util\Validate;
 
 /**
@@ -43,26 +42,49 @@ class BaseController
 
     /**
      * return success
-     * @date 2017-04-18
      * @param array $data required 数组信息
-     * @return array
+     * @return class Response
      */
     public static function success($data)
     {
-        return Response::success($data);
+        return app('response')->setData(['code' => 0, 'msg' => 'ok', 'data' => !is_null($data) ? $data : new \stdClass()]);
     }
 
     /**
      * 错误数组返回
-     * @date 2017-04-18
      * @param string $code required 错误code
      * @param string $msg required 错误message
      * @param any|bool $data option data数据
-     * @return array
+     * @return class Response
      */
-    public function error($code, $msg, $data = false)
+    public function error($code, $msg, $data = null)
     {
-        return Response::error($code, $msg, $data);
+        return app('response')->setData(['code' => $code, 'msg' => $msg, 'data' => !is_null($data) ? $data : new \stdClass()]);
     }
+
+
+    /**
+     * response cache expire
+     * @param int $time required 前端缓存的时间
+     * @return class Response
+     */
+    public function responseExpire($time)
+    {
+        //todo
+        return $this;
+    }
+
+
+    /**
+     * response cache expire
+     * @param int $time required 前端缓存的时间
+     * @return class Response
+     */
+    public function responseExpireAt($time)
+    {
+        //todo
+        return $this;
+    }
+
 
 }

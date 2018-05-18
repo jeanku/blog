@@ -13,5 +13,6 @@ return array(
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Jeanku\\Rabbitmq\\' => array($vendorDir . '/jeanku/rabbitmq/src'),
     'Jeanku\\Database\\' => array($vendorDir . '/jeanku/database'),
+    'Jeanku\\' => array($vendorDir . '/jeanku/util'),
     'App\\' => array($baseDir . '/app'),
 );

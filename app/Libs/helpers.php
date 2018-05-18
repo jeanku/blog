@@ -1,5 +1,6 @@
 <?php
 
+
 if (!function_exists('data_get'))
 {
     /**
@@ -293,5 +294,23 @@ if (!function_exists('env'))
     function env($key)
     {
         return getenv($key);
+    }
+}
+
+if (! function_exists('app')) {
+    /**
+     * Get the available container instance.
+     *
+     * @param  string  $make
+     * @param  array   $parameters
+     * @return mixed|\Illuminate\Foundation\Application
+     */
+    function app($make = null, $parameters = [])
+    {
+        if (is_null($make)) {
+            return \App\Controllers\Container::getInstance();
+        }
+
+        return \App\Controllers\Container::getInstance()->make($make, $parameters);
     }
 }
