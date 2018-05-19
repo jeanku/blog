@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "4b0919d32960825cc01f6f7fe22d7ee6",
@@ -95,12 +95,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeanku/util.git",
-                "reference": "edbb1451617940041367a6e6a5022d67681946a0"
+                "reference": "2f34143d2bc231a8e89e8dce174240f63105fb21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeanku/util/zipball/edbb1451617940041367a6e6a5022d67681946a0",
-                "reference": "edbb1451617940041367a6e6a5022d67681946a0",
+                "url": "https://api.github.com/repos/jeanku/util/zipball/2f34143d2bc231a8e89e8dce174240f63105fb21",
+                "reference": "2f34143d2bc231a8e89e8dce174240f63105fb21",
                 "shasum": ""
             },
             "require": {
@@ -129,7 +129,7 @@
                 "request",
                 "util"
             ],
-            "time": "2018-05-18 10:04:12"
+            "time": "2018-05-19T04:29:24+00:00"
         },
         {
             "name": "nezamy/route",

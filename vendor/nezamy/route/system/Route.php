@@ -51,7 +51,6 @@ class Route
         $this->req            = \System\Request::instance();
         $this->bindedGroups   = $this->currentGroup = [];
         defined('URL') || define('URL', $this->req->url, TRUE);
-
     }
 
     /**
@@ -92,10 +91,8 @@ class Route
         if ($uri != '/') {
             $uri = $this->removeDuplSlash($uri) . '/';
         }
-
         // Replace named uri param to regex pattern.
         $pattern = $this->namedParameters($uri);
-
         // Clean uri for route name.
         // $this->currentUri = trim( str_replace($this->patt, '', $pattern) ,'/').'/';
         $this->currentUri = $pattern;
@@ -117,12 +114,9 @@ class Route
                     if ($this->isGroup) {
                         $this->prams = array_merge($this->pramsGroup, $this->prams);
                     }
-
                     $this->req->args = $this->bindArgs($this->prams, $this->matchedArgs);
-
                     $this->matchedPath   = $this->currentUri;
                     $this->routeCallback = $callback;
-
                     if ($options['continu']) {
                         $this->callback($this->routeCallback, $this->req->args);
                         $this->routeCallback = $this->matched = false;
@@ -149,12 +143,9 @@ class Route
             }
             return $this;
         }
-
         $group = $this->removeDuplSlash($group . '/');
         $group = $this->namedParameters($group, true);
-
         $this->matched($this->prepare($group, false), false);
-
         $this->currentGroup = $group;
         // Add this group and sub-groups to append to route uri.
         $this->group     .= $group;
@@ -162,11 +153,9 @@ class Route
         $callback         = $callback->bindTo($this);
         // Call with args.
         call_user_func_array($callback, $this->bindArgs($this->pramsGroup, $this->matchedArgs));
-
         $this->isGroup     = false;
         $this->pramsGroup  = $this->pattGroup = [];
         $this->group = substr($this->group, 0, -strlen($group));
-
         return $this;
     }
 
@@ -187,9 +176,7 @@ class Route
             foreach ($pram as $p) {
                 $newArgs[$p] = array_shift($args);
             }
-
-            if (isset($args[0]) && count($args) == 1)
-            {
+            if (isset($args[0]) && count($args) == 1) {
                 foreach (explode('/', '/' . $args[0]) as $arg) {
                     $newArgs[] = $arg;
                 }
@@ -215,7 +202,6 @@ class Route
         // Reset pattern and parameters to empty array.
         $this->patt  = [];
         $this->prams = [];
-
         // Replace named parameters to regex pattern.
         return preg_replace_callback('/\/\{([a-z-0-9]+)\}\??(:\(?[^\/]+\)?)?/i', function($m) use ($isGroup)
         {
@@ -230,7 +216,6 @@ class Route
             if (strpos($m[0], '?') !== false) {
                 $patt = str_replace('/(', '(/', $patt) . '?';
             }
-
             if ($isGroup) {
                 $this->isGroup      = true;
                 $this->pramsGroup[] = $m[1];
@@ -258,7 +243,6 @@ class Route
         if (substr($patt, 0, 3) == '/(/') {
             $patt = substr($patt, 1);
         }
-
         return  '~^' . $patt . ($strict ? '$' : '') . '~i';
     }
 
@@ -316,19 +300,16 @@ class Route
 
     /**
      * Set a route name.
-     *
-     * @param string  $name
-     *
+     * @param string $name
      * @return $this
+     * @throws \Exception
      */
-        public function _as($name)
-        {
+    public function _as($name)
+    {
         $name = strtolower($name);
-        if (array_key_exists($name, $this->routes))
-        {
+        if (array_key_exists($name, $this->routes)) {
             throw new \Exception("Route name ($name) already registered.");
         }
-
         $patt = $this->patt;
         $pram = $this->prams;
         // Merge group parameters with route parameters.
@@ -338,16 +319,13 @@ class Route
                 $pram = array_merge($this->pramsGroup, $pram);
             }
         }
-
         // :param
         if ($cprams = count($pram)) {
             foreach ($pram as $k => $v) {
                 $pram[$k] = '/:' . $v;
             }
         }
-
         $name = str_replace('/', '.', $name);
-
         // Replace pattern to named parameters.
         $replaced = $this->group . $this->currentUri;
         foreach ($patt as $k => $v) {
@@ -356,9 +334,7 @@ class Route
                 $replaced = substr_replace($replaced, $pram[$k], $pos, strlen($v));
             }
         }
-
         $this->routes[$name] = ltrim($this->removeDuplSlash(strtolower($replaced)), '/');
-
         return $this;
     }
 
@@ -373,10 +349,8 @@ class Route
     public function getRoute($name, array $args = [])
     {
         $name = strtolower($name);
-
         if (isset($this->routes[$name])) {
             $route = $this->routes[$name];
-
             foreach ($args as $k => $v) {
                 $route = str_replace(':' . $k, $v, $route);
             }
@@ -388,69 +362,62 @@ class Route
     /**
      * Run and get a response.
      */
-    public function end()
+    public function handle()
     {
+        require WEBPATH . '/config/routes.php';
         if ($this->matched) {
             return $this->callback($this->routeCallback, $this->req->args);
         } else {
-            echo "<pre>";
-            print_r($this->req->url);
-            exit;
-           return [];
+            $data = explode(DIRECTORY_SEPARATOR, $this->req->path);
+            $data = array_filter($data);
+            if (count($data) == 2) {
+                $class = sprintf('\App\Controllers\%sController' , ucfirst(trim(array_shift($data))));
+                if (class_exists($class) && method_exists(($class = new $class()), $method = trim(array_shift($data)))) {
+                    return $class->$method();
+                }
+            }
         }
+        //todo
     }
 
     /**
      * Call a route that has been matched.
-     *
-     * @param string\array    $callback
-     * @param array           $args
-     *
+     * @param string\array $callback
+     * @param array $args
      * @return string
+     * @throws \Exception
      */
     protected function callback($callback, array $args = [])
     {
-        if (isset($callback))
-        {
-            if (is_callable($callback) && $callback instanceof \Closure)
-            {
-                // Set new object and append the callback with some data.
+        if (isset($callback)) {
+            if (is_callable($callback) && $callback instanceof \Closure) {
                 $o = new \ArrayObject($args);
                 $o->app = App::instance();
                 $callback = $callback->bindTo($o);
-            } elseif (is_string($callback) && strpos($callback, '@') !== false)
-            {
+            } elseif (is_string($callback) && strpos($callback, '@') !== false) {
                 $fixcallback       = explode('@', $callback, 2);
                 $this->Controller  = $fixcallback[0];
-
-                if (is_callable(
-                    $callback     = [$fixcallback[0], (isset($fixcallback[1]) ? $fixcallback[1] : 'index')]
-                )) {
+                if (is_callable($callback = [$fixcallback[0], (isset($fixcallback[1]) ? $fixcallback[1] : 'index')])) {
                     $this->Method = $callback[1];
                 } else {
                     throw new \Exception("Callable error on {$callback[0]} -> {$callback[1]} !");
                 }
             }
-
             if (is_array($callback) && !is_object($callback[0])) {
                 $callback[0] = new $callback[0];
             }
-
             if (isset($args[0]) && $args[0] == $this->fullArg) {
                 array_shift($args);
             }
-
-            // Finally, call the method.
             return call_user_func_array($callback, $args);
         }
     }
 
+
     /**
      * Magic call.
-     *
      * @param string   $method
      * @param array    $args
-     *
      * @return mixed
      */
     public function __call($method, $args)
@@ -470,19 +437,16 @@ class Route
                 $exists[] = $v;
             }
         }
-
         if (count($exists)) {
             array_unshift($args, $exists);
             return call_user_func_array([$this, 'route'], $args);
         }
-
         return  is_string($method) && isset($this->{$method}) && is_callable($this->{$method})
                 ? call_user_func_array($this->{$method}, $args) : null;
     }
 
     /**
      * Set new variables and functions to this class.
-     *
      * @param string      $k
      * @param mixed       $v
      */

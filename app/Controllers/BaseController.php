@@ -47,7 +47,7 @@ class BaseController
      */
     public static function success($data)
     {
-        return app('response')->setData(['code' => 0, 'msg' => 'ok', 'data' => !is_null($data) ? $data : new \stdClass()]);
+        return app('response')->setData(['code' => 0, 'msg' => 'ok', 'data' => !is_null($data) ? $data : new \stdClass()])->send();
     }
 
     /**
@@ -59,7 +59,7 @@ class BaseController
      */
     public function error($code, $msg, $data = null)
     {
-        return app('response')->setData(['code' => $code, 'msg' => $msg, 'data' => !is_null($data) ? $data : new \stdClass()]);
+        return app('response')->setData(['code' => $code, 'msg' => $msg, 'data' => !is_null($data) ? $data : new \stdClass()])->send();
     }
 
 

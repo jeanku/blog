@@ -1,6 +1,5 @@
 <?php
 
-
 if (!function_exists('data_get'))
 {
     /**
@@ -267,19 +266,22 @@ if (! function_exists('distance')) {
 if (!function_exists('config'))
 {
     /**
-     * 返回给定值的默认值.
-     *
-     * @param  mixed $value
-     *
+     * get config
+     * @param  string $file require file name
+     * @param  string $key sometime key name
      * @return mixed
      */
-    function config($key)
+    function config($file, $key = null)
     {
-        $path = WEBPATH .'/configs/'. env('APP_ENV') . DIRECTORY_SEPARATOR . $key . '.php';
+        $path = WEBPATH .'/config/' . $file . '.php';
         if (is_file($path) && is_readable($path)) {
-            return require($path);
+            $config = require($path);
         }
-        return [];
+        if ($key) {
+            return isset($config[$key]) ? $config[$key] : null;
+        } else {
+            return isset($config) ? $config : null;
+        }
     }
 }
 
@@ -291,9 +293,9 @@ if (!function_exists('env'))
      *
      * @return mixed
      */
-    function env($key)
+    function env($key, $default = null)
     {
-        return getenv($key);
+        return getenv($key) ? : $default;
     }
 }
 
@@ -308,9 +310,8 @@ if (! function_exists('app')) {
     function app($make = null, $parameters = [])
     {
         if (is_null($make)) {
-            return \App\Controllers\Container::getInstance();
+            return \Jeanku\Util\Container::getInstance();
         }
-
-        return \App\Controllers\Container::getInstance()->make($make, $parameters);
+        return \Jeanku\Util\Container::getInstance()->make($make, $parameters);
     }
 }

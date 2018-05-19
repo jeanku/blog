@@ -2,7 +2,7 @@
 namespace App\Controllers;
 
 use App\Modules\Menu;
-
+use Jeanku\Facades\Log;
 /**
  * simple description
  * @desc more description
@@ -94,7 +94,7 @@ class MenuController extends BaseController
      * @param array $param require parameters
      * @return array
      */
-    public function show($param)
+    public function show($param = null)
     {
         try {
             $filed = [
