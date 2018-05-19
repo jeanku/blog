@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use Response;
 use App\Util\Validate;
 
 /**
@@ -29,7 +30,7 @@ class BaseController
             } catch (\Exception $e) {
                 $msg = '参数错误';
             }
-            throw new \Exception($msg, 999998);
+            throw new \App\Exceptions\ServiceException($msg, 999998);
         }
         if($filter){                                                            //是否过滤除了校验规则之外的数据
             $params = array_intersect_key($params, $field);
@@ -47,7 +48,7 @@ class BaseController
      */
     public static function success($data)
     {
-        return app('response')->setData(['code' => 0, 'msg' => 'ok', 'data' => !is_null($data) ? $data : new \stdClass()])->send();
+        return Response::setData(['code' => 0, 'msg' => 'ok', 'data' => !is_null($data) ? $data : new \stdClass()])->send();
     }
 
     /**
@@ -59,7 +60,7 @@ class BaseController
      */
     public function error($code, $msg, $data = null)
     {
-        return app('response')->setData(['code' => $code, 'msg' => $msg, 'data' => !is_null($data) ? $data : new \stdClass()])->send();
+        return Response::setData(['code' => $code, 'msg' => $msg, 'data' => !is_null($data) ? $data : new \stdClass()])->send();
     }
 
 

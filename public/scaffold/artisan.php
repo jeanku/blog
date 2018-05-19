@@ -31,7 +31,7 @@ switch ($type) {
             if (strpos($line, '{{validate}}') > -1) {
                 foreach ($keys as $key => $val) {                               //处理校验规则
                     $lengthMsg = ($type[$key] == 'string' ? sprintf('length:[0,%s]', $length[$key]) : "min:0");
-                    $temp = str_pad("                '$val'=>'sometime|$type[$key]|$lengthMsg',", 100);
+                    $temp = str_pad("            '$val'=>'sometime|$type[$key]|$lengthMsg',", 100);
                     if (!empty($comment[$key])) {                               //添加字段注释
                         $temp = $temp . '//' . $comment[$key] . PHP_EOL;
                     } else {

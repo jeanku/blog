@@ -6,12 +6,12 @@ namespace Jeanku\Rabbitmq;
  * @desc more description
  * @date 2018-04-02
  */
-abstract class Consume
+abstract class Queue
 {
 
-    protected $exchange = '';
-    protected $queue = '';
-    protected $route = '';
+    protected $exchange = 'master';
+    protected $queue = 'master';
+    protected $route = 'master';
 
     protected $type = AMQP_EX_TYPE_DIRECT;                    //交换机
 
@@ -53,6 +53,25 @@ abstract class Consume
         }
         $conn->disconnect();
     }
+
+
+    /**
+     * message push
+     * @date 2018-04-11
+     * @param string|Closure $message require 信息
+     * @return array
+     */
+    public static function push($message)
+    {
+        $conn = Connection::getInstance();
+        $channel = new \AMQPChannel($conn);
+        $exchange = new \AMQPExchange($channel);
+        $model = new static();
+        $exchange->setName($model->exchange);
+        $exchange->publish($message, $model->route);
+        $conn->disconnect();
+    }
+
 
     /**
      * handle message

@@ -2,131 +2,103 @@
 namespace App\Controllers;
 
 use App\Modules\Menu;
-use Jeanku\Facades\Log;
+use Request;
+use Log;
+
 /**
- * simple description
+ * Menu class
  * @desc more description
  * @author jeanku
- * @date 2018-04-02
+ * @date 2018-05-19
  */
 class MenuController extends BaseController
 {
 
     /**
      * lists function
-     * @date 2018-04-02
-     * @param array $param require parameters
-     * @return array
+     * @date 2018-05-19
+     * @return Response
      */
-    public function lists($param = [], $page = 1, $pagesize = 10, $order = 'id', $desc = 'desc')
+    public function lists()
     {
-        try {
-            return $this->success(Menu::lists($param, $page, $pagesize, $order, $desc));
-        } catch (\Exception $e) {
-            Log::warning(__CLASS__. '::' . __FUNCTION__, ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
-            return $this->error($e->getCode(), $e->getMessage());
-        }
+        return $this->success(Menu::lists(Request::all(), Request::input('page', 1), Request::input('size', 10)));
     }
 
     /**
      * add function
-     * @date 2018-04-02
-     * @param array $param require parameters
-     * @return array
+     * @date 2018-05-19
+     * @return Response
      */
-    public function add($param)
+    public function add()
     {
-        try {
-            $filed = [
-                'id'=>'sometime|int|min:0',                                                         //自增ID
-                'name'=>'sometime|string|length:[0,30]',                                            //菜单名称
-                'parent_id'=>'sometime|int|min:0',                                                  //父菜单ID
-                'url'=>'sometime|string|length:[0,100]',                                            //菜单地址
-                'key'=>'sometime|string|length:[0,50]',                                             //菜单key
-                'type'=>'sometime|int|min:0',                                                       //菜单类型 0:菜单 1:权限 2:资源
-                'icon'=>'sometime|string|length:[0,25]',                                            //菜单图标
-                'status'=>'sometime|int|min:0',                                                     //数据状态:1:正常 0:失效
-                'create_time'=>'sometime|int|min:0',                                                //创建时间
-                'update_time'=>'sometime|int|min:0',                                                //更新时间
-            ];
-            $param = self::validate($filed, $param);
-            return $this->success(Menu::add($param));
-        } catch (\Exception $e) {
-            Log::warning(__CLASS__. '::' . __FUNCTION__, ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
-            return $this->error($e->getCode(), $e->getMessage());
-        }
+        $filed = [
+            'id'=>'sometime|int|min:0',                                                             //??ID
+            'name'=>'sometime|string|length:[0,30]',                                                //????
+            'parent_id'=>'sometime|int|min:0',                                                      //???ID
+            'url'=>'sometime|string|length:[0,100]',                                                //????
+            'key'=>'sometime|string|length:[0,50]',                                                 //??key
+            'type'=>'sometime|int|min:0',                                                           //???? 0:?? 1:?? 2:??
+            'icon'=>'sometime|string|length:[0,25]',                                                //????
+            'status'=>'sometime|int|min:0',                                                         //????:1:?? 0:??
+            'create_time'=>'sometime|int|min:0',                                                    //????
+            'update_time'=>'sometime|int|min:0',                                                    //????
+        ];
+        $param = self::validate($filed, Request::all());
+        return $this->success(Menu::add($param));
     }
 
 
     /**
      * update function
-     * @date 2018-04-02
-     * @param array $param require parameters
-     * @return array
+     * @date 2018-05-19
+     * @return Response
      */
-    public function update($param)
+    public function update()
     {
-        try {
-            $filed = [
-                'id'=>'sometime|int|min:0',                                                         //自增ID
-                'name'=>'sometime|string|length:[0,30]',                                            //菜单名称
-                'parent_id'=>'sometime|int|min:0',                                                  //父菜单ID
-                'url'=>'sometime|string|length:[0,100]',                                            //菜单地址
-                'key'=>'sometime|string|length:[0,50]',                                             //菜单key
-                'type'=>'sometime|int|min:0',                                                       //菜单类型 0:菜单 1:权限 2:资源
-                'icon'=>'sometime|string|length:[0,25]',                                            //菜单图标
-                'status'=>'sometime|int|min:0',                                                     //数据状态:1:正常 0:失效
-                'create_time'=>'sometime|int|min:0',                                                //创建时间
-                'update_time'=>'sometime|int|min:0',                                                //更新时间
-            ];
-            $param = self::validate($filed, $param);
-            return $this->success(Menu::update($param));
-        } catch (\Exception $e) {
-            Log::warning(__CLASS__. '::' . __FUNCTION__, ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
-            return $this->error($e->getCode(), $e->getMessage());
-        }
+        $filed = [
+            'id'=>'sometime|int|min:0',                                                             //??ID
+            'name'=>'sometime|string|length:[0,30]',                                                //????
+            'parent_id'=>'sometime|int|min:0',                                                      //???ID
+            'url'=>'sometime|string|length:[0,100]',                                                //????
+            'key'=>'sometime|string|length:[0,50]',                                                 //??key
+            'type'=>'sometime|int|min:0',                                                           //???? 0:?? 1:?? 2:??
+            'icon'=>'sometime|string|length:[0,25]',                                                //????
+            'status'=>'sometime|int|min:0',                                                         //????:1:?? 0:??
+            'create_time'=>'sometime|int|min:0',                                                    //????
+            'update_time'=>'sometime|int|min:0',                                                    //????
+        ];
+        $param = self::validate($filed, Request::all());
+        return $this->success(Menu::update($param));
     }
 
 
     /**
      * show function
-     * @date 2018-04-02
-     * @param array $param require parameters
-     * @return array
+     * @date 2018-05-19
+     * @return Response
      */
-    public function show($param = null)
+    public function show()
     {
-        try {
-            $filed = [
-                'id' => 'require|int|min:0'
-            ];
-            $param = self::validate($filed, $param);
-            return $this->success(Menu::show($param));
-        } catch (\Exception $e) {
-            Log::warning(__CLASS__. '::' . __FUNCTION__, ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
-            return $this->error($e->getCode(), $e->getMessage());
-        }
+        $filed = [
+            'id' => 'require|int|min:0'
+        ];
+        $param = self::validate($filed, Request::all());
+        return $this->success(Menu::show($param));
     }
 
 
     /**
      * del function
-     * @date 2018-04-02
-     * @param array $param require parameters
-     * @return array
+     * @date 2018-05-19
+     * @return Response
      */
-    public function del($param)
+    public function del()
     {
-        try {
-            $filed = [
-                'id' => 'require|int|min:0'
-            ];
-            $param = self::validate($filed, $param);
-            return $this->success(Menu::del($param));
-        } catch (\Exception $e) {
-            Log::warning(__CLASS__. '::' . __FUNCTION__, ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
-            return $this->error($e->getCode(), $e->getMessage());
-        }
+        $filed = [
+            'id' => 'require|int|min:0'
+        ];
+        $param = self::validate($filed, Request::all());
+        return $this->success(Menu::del($param));
     }
 
 }

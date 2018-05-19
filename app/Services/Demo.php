@@ -1,14 +1,14 @@
 <?php
 namespace App\Services;
 
-use Jeanku\Rabbitmq\Consume;
+use Jeanku\Rabbitmq\Queue;
 
 /**
  * consume message
  * @desc more description
  * @date 2018-04-02
  */
-class Demo extends Consume
+class Demo extends Queue
 {
     //exchange name
     protected $exchange = 'demo';

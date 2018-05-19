@@ -553,7 +553,7 @@ class Connection
     public function logQuery($query, $bindings, $time = null)
     {
         $query = vsprintf(str_replace('?', '%s', $query), $bindings);
-        Log::notice("【SQL】:$query; 【time】:{$time}");
+        \Log::notice("【SQL】:$query; 【time】:{$time}");
     }
 
 

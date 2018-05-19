@@ -3,11 +3,11 @@
 return [
     'jeanku' => [
         'driver' => 'mysql',
-        'host' => '10.10.1.138',
+        'host' => '120.55.61.193',
         'port' => '3306',
-        'database' => 'chaojijiaolian',
+        'database' => 'jeanku',
         'username' => 'root',
-        'password' => 'root',
+        'password' => '123456',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix' => '',
