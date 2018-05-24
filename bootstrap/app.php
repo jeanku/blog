@@ -13,9 +13,10 @@ $app->instance('route', $route = System\Route::instance());
 //处理Exception Error
 $app->make('exceptionHandle')->bootstrap();
 
-$config = config('app', 'aliases');
-foreach ($config as $key => $val) {
+$config = config('app');
+foreach ($config['aliases'] as $key => $val) {
     class_alias($val, $key);
 }
+ini_set('date.timezone',$config['timezone']);
 
 return $app;

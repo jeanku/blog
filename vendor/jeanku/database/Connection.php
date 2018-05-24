@@ -8,7 +8,6 @@ use Exception;
 use Throwable;
 use DateTimeInterface;
 use Jeanku\Database\Support\Arr;
-use Jeanku\Database\Support\Log;
 use Jeanku\Database\Query\Expression;
 use Jeanku\Database\Query\Builder as QueryBuilder;
 use Jeanku\Database\Query\Grammars\Grammar as QueryGrammar;
@@ -468,6 +467,7 @@ class Connection
         try {
             $result = $this->runQueryCallback($query, $bindings, $callback);
         } catch (\Exception $e) {
+//            \Supercoach\Util\Log::warning("【SQL】:" . $e->getMessage());
             throw new \Exception('sql not valid exception', -1);
         }
         $time = $this->getElapsedTime($start);
@@ -553,7 +553,7 @@ class Connection
     public function logQuery($query, $bindings, $time = null)
     {
         $query = vsprintf(str_replace('?', '%s', $query), $bindings);
-        \Log::notice("【SQL】:$query; 【time】:{$time}");
+//        \Supercoach\Util\Log::notice("【SQL】:$query; 【time】:{$time}");
     }
 
 

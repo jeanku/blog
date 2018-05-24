@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Exceptions\ServiceException;
 use App\Modules\Menu;
 use Request;
 use Log;

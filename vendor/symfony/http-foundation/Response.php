@@ -747,7 +747,7 @@ class Response
             $this->headers->remove('Expires');
         } else {
             $date = clone $date;
-            $date->setTimezone(new \DateTimeZone('Asia/Shanghai'));
+            $date->setTimezone(new \DateTimeZone('UTC'));
             $this->headers->set('Expires', $date->format('D, d M Y H:i:s').' GMT');
         }
 

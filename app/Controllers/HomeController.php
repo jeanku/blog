@@ -7,18 +7,12 @@ use App\Util\Response;
 use Jeanku\Facades\Config;
 
 
-class HomeController extends BaseController
+class HomeController implements HelloWorldIf
 {
 
 
-    public function home()
+    public function sayHello($name)
     {
-//        $param = Request::all();
-//        Log::info('fffff');
-        $data = Config::get('database');
-        echo "<pre>";
-        print_r($data);
-        exit;
-        return true;
+        return [$name];
     }
 }

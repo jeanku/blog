@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 define('WEBPATH', dirname(__DIR__));
 
 $app = require_once WEBPATH .'/bootstrap/app.php';
+
 Route::handle();
 
 
