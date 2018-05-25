@@ -7,14 +7,14 @@ namespace App\Thrift\HelloThrift;
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-use App\Util\lib\Base\TBase;
-use App\Util\lib\Type\TType;
-use App\Util\lib\Type\TMessageType;
-use App\Util\lib\Exception\TException;
-use App\Util\lib\Exception\TProtocolException;
-use App\Util\lib\Protocol\TProtocol;
-use App\Util\lib\Protocol\TBinaryProtocolAccelerated;
-use App\Util\lib\Exception\TApplicationException;
+use Jeanku\Thrift\Base\TBase;
+use Jeanku\Thrift\Type\TType;
+use Jeanku\Thrift\Type\TMessageType;
+use Jeanku\Thrift\Exception\TException;
+use Jeanku\Thrift\Exception\TProtocolException;
+use Jeanku\Thrift\Protocol\TProtocol;
+use Jeanku\Thrift\Protocol\TBinaryProtocolAccelerated;
+use Jeanku\Thrift\Exception\TApplicationException;
 
 
 

@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b0919d32960825cc01f6f7fe22d7ee6",
+    "content-hash": "bfa150e251cb0e92862ec696ca8ea30c",
     "packages": [
         {
             "name": "jeanku/database",
@@ -88,6 +88,45 @@
                 "rabbitmq"
             ],
             "time": "2018-05-16T03:57:30+00:00"
+        },
+        {
+            "name": "jeanku/thrift",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeanku/thrift.git",
+                "reference": "5b536172fe914664caf6a99d96ecef8606ca926f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeanku/thrift/zipball/5b536172fe914664caf6a99d96ecef8606ca926f",
+                "reference": "5b536172fe914664caf6a99d96ecef8606ca926f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jeanku\\Thrift\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JeanKu",
+                    "email": "490573621@qq.com"
+                }
+            ],
+            "description": "thrift",
+            "keywords": [
+                "thrift"
+            ],
+            "time": "2018-05-25 02:16:51"
         },
         {
             "name": "jeanku/util",
@@ -406,7 +445,8 @@
     "stability-flags": {
         "jeanku/database": 20,
         "jeanku/rabbitmq": 20,
-        "jeanku/util": 20
+        "jeanku/util": 20,
+        "jeanku/thrift": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

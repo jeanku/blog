@@ -407,5 +407,46 @@
             "portable",
             "shim"
         ]
+    },
+    {
+        "name": "jeanku/thrift",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/thrift.git",
+            "reference": "5b536172fe914664caf6a99d96ecef8606ca926f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/thrift/zipball/5b536172fe914664caf6a99d96ecef8606ca926f",
+            "reference": "5b536172fe914664caf6a99d96ecef8606ca926f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-05-25T02:16:51+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\Thrift\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "thrift",
+        "keywords": [
+            "thrift"
+        ]
     }
 ]

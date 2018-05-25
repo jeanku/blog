@@ -23,6 +23,7 @@ class ComposerStaticInitab491ee59e1264ad0b50430a83662355
         ),
         'J' => 
         array (
+            'Jeanku\\Thrift\\' => 14,
             'Jeanku\\Rabbitmq\\' => 16,
             'Jeanku\\Database\\' => 16,
             'Jeanku\\' => 7,
@@ -49,6 +50,10 @@ class ComposerStaticInitab491ee59e1264ad0b50430a83662355
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Jeanku\\Thrift\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeanku/thrift',
         ),
         'Jeanku\\Rabbitmq\\' => 
         array (
