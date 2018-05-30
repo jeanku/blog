@@ -1,136 +1,5 @@
 [
     {
-        "name": "jeanku/database",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jeanku/database.git",
-            "reference": "5f79a95f5d73b77fd10ba68917455e4339f2d7c4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jeanku/database/zipball/5f79a95f5d73b77fd10ba68917455e4339f2d7c4",
-            "reference": "5f79a95f5d73b77fd10ba68917455e4339f2d7c4",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "time": "2018-04-12T12:47:59+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Jeanku\\Database\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "JeanKu",
-                "email": "490573621@qq.com"
-            }
-        ],
-        "description": "light Illuminate Database package.",
-        "homepage": "https://laravel.com",
-        "keywords": [
-            "database",
-            "laravel",
-            "orm",
-            "sql"
-        ]
-    },
-    {
-        "name": "jeanku/rabbitmq",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jeanku/rabbitmq.git",
-            "reference": "e19387043604990caff1486e0ca9bf0091df8497"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jeanku/rabbitmq/zipball/e19387043604990caff1486e0ca9bf0091df8497",
-            "reference": "e19387043604990caff1486e0ca9bf0091df8497",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "time": "2018-05-16T03:57:30+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Jeanku\\Rabbitmq\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "JeanKu",
-                "email": "490573621@qq.com"
-            }
-        ],
-        "description": "rabbitmq",
-        "homepage": "https://laravel.com",
-        "keywords": [
-            "rabbitmq"
-        ]
-    },
-    {
-        "name": "jeanku/util",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jeanku/util.git",
-            "reference": "6a1a7f35427e20dccaa67668938ec805f3a557f1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jeanku/util/zipball/6a1a7f35427e20dccaa67668938ec805f3a557f1",
-            "reference": "6a1a7f35427e20dccaa67668938ec805f3a557f1",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "time": "2018-05-19T05:47:51+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Jeanku\\": "/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "JeanKu",
-                "email": "490573621@qq.com"
-            }
-        ],
-        "description": "util",
-        "keywords": [
-            "config",
-            "log",
-            "request",
-            "util"
-        ]
-    },
-    {
         "name": "nezamy/route",
         "version": "v1.1.0",
         "version_normalized": "1.1.0.0",
@@ -447,6 +316,137 @@
         "description": "thrift",
         "keywords": [
             "thrift"
+        ]
+    },
+    {
+        "name": "jeanku/database",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/database.git",
+            "reference": "9daca7f2a2af5674820109f7c146f48c619cee1c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/database/zipball/9daca7f2a2af5674820109f7c146f48c619cee1c",
+            "reference": "9daca7f2a2af5674820109f7c146f48c619cee1c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-05-30T08:03:38+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\Database\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "light Illuminate Database package.",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "database",
+            "laravel",
+            "orm",
+            "sql"
+        ]
+    },
+    {
+        "name": "jeanku/rabbitmq",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/rabbitmq.git",
+            "reference": "e1aa595b5d5b8c9a3df3ca698a401e21ecbc2f0b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/rabbitmq/zipball/e1aa595b5d5b8c9a3df3ca698a401e21ecbc2f0b",
+            "reference": "e1aa595b5d5b8c9a3df3ca698a401e21ecbc2f0b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-05-30T08:59:19+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\Rabbitmq\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "rabbitmq",
+        "homepage": "https://laravel.com",
+        "keywords": [
+            "rabbitmq"
+        ]
+    },
+    {
+        "name": "jeanku/util",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeanku/util.git",
+            "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeanku/util/zipball/f9dc68b90619c07890f62115ea7b71b4f35085c2",
+            "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2018-05-30T10:31:37+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Jeanku\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JeanKu",
+                "email": "490573621@qq.com"
+            }
+        ],
+        "description": "util",
+        "keywords": [
+            "config",
+            "log",
+            "request",
+            "util"
         ]
     }
 ]

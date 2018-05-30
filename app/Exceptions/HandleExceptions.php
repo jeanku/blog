@@ -51,7 +51,7 @@ class HandleExceptions
             Log::info('【EXCEPTION】', ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
             return \Response::setData(['code' => $e->getCode(), 'msg' => $e->getMessage(), 'data' => new \stdClass()])->send();
         } else {
-            Log::warning('【EXCEPTION】', ['code'=>$e->getCode(), 'massage'=>$e->getMessage()]);
+            Log::warning('【EXCEPTION】', ['code'=>$e->getCode(), 'massage'=>$e->getTraceAsString()]);
             return \Response::setData(['code' => -1, 'msg' => '系统异常', 'data' => new \stdClass()])->send();
         }
     }

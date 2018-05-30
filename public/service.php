@@ -6,8 +6,11 @@ require '../vendor/autoload.php';
 require '../app/Libs/helpers.php';
 
 //设置错误级别
+error_reporting(E_ALL);
 define('WEBPATH', dirname(__DIR__));
-setenv();
+
+$app = require_once WEBPATH .'/bootstrap/app.php';
+
 $class = 'App\Services\\' . $argv[1];
 $instance = new $class();
 return call_user_func_array(array($instance, 'run'), []);

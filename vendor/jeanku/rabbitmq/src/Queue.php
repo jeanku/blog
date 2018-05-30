@@ -51,7 +51,6 @@ abstract class Queue
                 }
             }, AMQP_AUTOACK);
         }
-        $conn->disconnect();
     }
 
 
@@ -69,7 +68,6 @@ abstract class Queue
         $model = new static();
         $exchange->setName($model->exchange);
         $exchange->publish($message, $model->route);
-        $conn->disconnect();
     }
 
 

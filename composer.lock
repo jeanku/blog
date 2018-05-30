@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeanku/database.git",
-                "reference": "5f79a95f5d73b77fd10ba68917455e4339f2d7c4"
+                "reference": "9daca7f2a2af5674820109f7c146f48c619cee1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeanku/database/zipball/5f79a95f5d73b77fd10ba68917455e4339f2d7c4",
-                "reference": "5f79a95f5d73b77fd10ba68917455e4339f2d7c4",
+                "url": "https://api.github.com/repos/jeanku/database/zipball/9daca7f2a2af5674820109f7c146f48c619cee1c",
+                "reference": "9daca7f2a2af5674820109f7c146f48c619cee1c",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2018-04-12T12:47:59+00:00"
+            "time": "2018-05-30 08:03:38"
         },
         {
             "name": "jeanku/rabbitmq",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeanku/rabbitmq.git",
-                "reference": "e19387043604990caff1486e0ca9bf0091df8497"
+                "reference": "e1aa595b5d5b8c9a3df3ca698a401e21ecbc2f0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeanku/rabbitmq/zipball/e19387043604990caff1486e0ca9bf0091df8497",
-                "reference": "e19387043604990caff1486e0ca9bf0091df8497",
+                "url": "https://api.github.com/repos/jeanku/rabbitmq/zipball/e1aa595b5d5b8c9a3df3ca698a401e21ecbc2f0b",
+                "reference": "e1aa595b5d5b8c9a3df3ca698a401e21ecbc2f0b",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
             "keywords": [
                 "rabbitmq"
             ],
-            "time": "2018-05-16T03:57:30+00:00"
+            "time": "2018-05-30 08:59:19"
         },
         {
             "name": "jeanku/thrift",
@@ -134,12 +134,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeanku/util.git",
-                "reference": "6a1a7f35427e20dccaa67668938ec805f3a557f1"
+                "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeanku/util/zipball/6a1a7f35427e20dccaa67668938ec805f3a557f1",
-                "reference": "6a1a7f35427e20dccaa67668938ec805f3a557f1",
+                "url": "https://api.github.com/repos/jeanku/util/zipball/f9dc68b90619c07890f62115ea7b71b4f35085c2",
+                "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "request",
                 "util"
             ],
-            "time": "2018-05-19T05:47:51+00:00"
+            "time": "2018-05-30 10:31:37"
         },
         {
             "name": "nezamy/route",

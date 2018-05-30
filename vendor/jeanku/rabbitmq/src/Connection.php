@@ -32,18 +32,12 @@ class Connection
      */
     public function getConnection()
     {
-        $config = require dirname(dirname(__FILE__)) . '/config/connection.php';
+        $config = app('config')::get('database', 'rabbitmq');
         $conn = new \AMQPConnection($config);
         //创建连接和channel
         if (!$conn->connect()) {
             throw new \Exception("Cannot connect to the broker!", -1);
         }
         return $conn;
-    }
-
-
-    public function disconnect()
-    {
-        self::$instance->disconnect();
     }
 }

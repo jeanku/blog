@@ -8,6 +8,7 @@ $app->singleton('config', \Jeanku\Util\Config::class);
 $app->singleton('request', \Jeanku\Util\Request::class);
 $app->singleton('response', \Symfony\Component\HttpFoundation\JsonResponse::class);
 $app->singleton('exceptionHandle', \App\Exceptions\HandleExceptions::class);
+$app->instance('redis', \Jeanku\Util\Redis::class);
 $app->instance('route', $route = System\Route::instance());
 
 //处理Exception Error

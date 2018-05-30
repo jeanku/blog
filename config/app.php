@@ -131,6 +131,7 @@ return [
         'Request'   => \Jeanku\Facades\Request::class,
         'Response'  => \Jeanku\Facades\Response::class,
         'Route'     => \Jeanku\Facades\Route::class,
+        'Predis'    => \Jeanku\Facades\Redis::class,
     ],
 
 ];
