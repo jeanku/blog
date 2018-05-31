@@ -21,7 +21,7 @@ class Redis
      */
     public static function getConfig($database)
     {
-        $config = app('config')->get('database', 'redis');
+        $config = app('config')::get('database', 'redis');
         if (isset($config[$database])) {
             return $config[$database];
         }
@@ -34,7 +34,7 @@ class Redis
      * @param string $database option redis database
      * @return array
      */
-    public static function getInstance($database = 'default')
+    public static function instance($database = 'default')
     {
         if (!isset(self::$instance[$database])) {
             $config = self::getConfig($database);

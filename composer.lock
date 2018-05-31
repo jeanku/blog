@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfa150e251cb0e92862ec696ca8ea30c",
+    "content-hash": "d5b599bf80a575416e0e19ddb921d520",
     "packages": [
         {
             "name": "jeanku/database",
@@ -134,12 +134,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeanku/util.git",
-                "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2"
+                "reference": "f173589245f4ec0439e4ab98dc656665f892c8ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeanku/util/zipball/f9dc68b90619c07890f62115ea7b71b4f35085c2",
-                "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2",
+                "url": "https://api.github.com/repos/jeanku/util/zipball/f173589245f4ec0439e4ab98dc656665f892c8ce",
+                "reference": "f173589245f4ec0439e4ab98dc656665f892c8ce",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "request",
                 "util"
             ],
-            "time": "2018-05-30 10:31:37"
+            "time": "2018-05-31 07:45:29"
         },
         {
             "name": "nezamy/route",
@@ -445,8 +445,8 @@
     "stability-flags": {
         "jeanku/database": 20,
         "jeanku/rabbitmq": 20,
-        "jeanku/util": 20,
-        "jeanku/thrift": 20
+        "jeanku/thrift": 20,
+        "jeanku/util": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

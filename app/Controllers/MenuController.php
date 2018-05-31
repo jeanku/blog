@@ -4,9 +4,8 @@ namespace App\Controllers;
 use App\Exceptions\ServiceException;
 use App\Modules\Menu;
 use Request;
-//use Log;
-//use Predis;
-use Jeanku\Facades\Redis;
+use Log;
+use Predis;
 /**
  * Menu class
  * @desc more description
@@ -22,7 +21,7 @@ class MenuController extends BaseController
      * @return Response
      */
     public function lists()
-    { 
+    {
         return $this->success(Menu::lists(Request::all(), Request::input('page', 1), Request::input('size', 10)));
     }
 

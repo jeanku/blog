@@ -412,18 +412,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/jeanku/util.git",
-            "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2"
+            "reference": "f173589245f4ec0439e4ab98dc656665f892c8ce"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/jeanku/util/zipball/f9dc68b90619c07890f62115ea7b71b4f35085c2",
-            "reference": "f9dc68b90619c07890f62115ea7b71b4f35085c2",
+            "url": "https://api.github.com/repos/jeanku/util/zipball/f173589245f4ec0439e4ab98dc656665f892c8ce",
+            "reference": "f173589245f4ec0439e4ab98dc656665f892c8ce",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2018-05-30T10:31:37+00:00",
+        "time": "2018-05-31T07:45:29+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
